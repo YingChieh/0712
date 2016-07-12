@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Dialog - Animation</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="D:/0712/ver1.js"></script>
+    <link rel="stylesheet" href="http://resources/demos/style.css">
+</head>
+
+<body>
+    <!--第一個視窗-->
+    <div id="dialog" title="編輯課程問卷題目" class="ui-widget" width="Auto">
+        <div align="right">
+            <button id="create-data">新增</button>
+        </div>
+        <br>
+        <table id="SetTopicTable" width="100%" cellpadding="2" cellspacing="1" class="ui-widget ui-widget-content">
+            <thead>
+                <tr class="ui-widget-header ">
+                    <th class="tatitle">排序</th>
+                    <th class="tatitle">題型</th>
+                    <th class="tatitle">題目</th>
+                    <th class="tatitle">填答型態</th>
+                    <th class="tatitle">編輯</th>
+                    <th class="tatitle">刪除</th>
+                </tr>
+            </thead>
+            <tbody class="ui-sortable"></tbody>
+        </table>
+
+
+        <br>
+    </div>
+
+    <!--第二個視窗-->
+    <div id="dialog2" title="新增問卷題目" class="ui-widget">
+        <table width="100%" border="0" cellspacing="1" cellpadding="0" class="newtype2">
+            <tbody>
+                <tr>
+                    <th width="20%" valign="top" class="tatitle">題型</th>
+                    <td align="left" valign="top">
+                        <select name="SaveType" id="SaveType" class="droplist">
+                            <option value="" selected="">請選擇</option>
+                            <option value="0">類別說明</option>
+                            <option value="1">單選題(計分)</option>
+                            <option value="2">單選題(不計分)</option>
+                            <option value="3">問答題(建議)</option>
+                            <option value="4">問答題(一般)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="trStatus" style="display: none">
+                    <th align="center" valign="top" class="tatitle">填答型態</th>
+                    <td align="left" valign="top">
+                        <input name="SaveStatus" type="radio" id="rioTrue" value="1">必填
+                        <input name="SaveStatus" type="radio" id="rioFalse" value="0">非必填
+                    </td>
+                </tr>
+                <tr id="trTitle" style="display: none">
+                    <th align="center" valign="top" class="tatitle">題目</th>
+                    <td align="left" valign="top">
+                        <input id="SaveTitle" name="SaveTitle" type="text" style="width: 95%" class="field06" value="">
+                    </td>
+                </tr>
+                <tr id="trOption" style="display: none">
+                    <th align="center" valign="top" class="tatitle">
+                        選項
+                        <input id="btnAddOption" type="button" value="新增選項" class="ui-button ui-widget ui-state-default ui-corner-all" onclick="addOption()">
+                    </th>
+                    <td id="Option" align="left" valign="top" class="ui-sortable">                        
+                        <div id="opt1" name="groupOpt" class=""><span class="ui-icon ui-icon-triangle-2-n-s" style="float: left; margin-right: .3em;margin-top: .3em;">
+                            </span>選項：<input type="text" name="Label" value="是" style="width: 30%">分數：<input type="text" name="Value" onkeyup="return ValidateFloat($(this),value)" value="0" style="width: 10%><img onclick="delopt('opt1')" src="images/backimage/fsil.gif"></div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <input id="hidOptCount" type="hidden" value="1">
+        <br>
+    </div>
+
+    <!--第三個視窗-->
+    <div id="dialog3" title="更改問卷題目" class="ui-widget">
+
+    </div>
+
+    <!--起始按鈕-->
+    <button id="btnAdd">新增</button>
+    <p id=print></p>
+
+</body>
+
+</html>
