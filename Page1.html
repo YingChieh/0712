@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="D:/0711/Script1.js"></script>
+    <title></title>
+</head>
+<body>
+    <!--初始頁面-->
+    <table id="Content" border="1"> <!--資料表格-->
+        <tbody>
+            <tr> <!--表頭-->
+                <th width="52"></th>
+                <th><span id="1">▼</span><a class="ordercolumn" id="Order1" onclick="Order(this.id)" href="#" columntype="DESC" selectcolumn="true" column="1">學年度</a></th>
+                <th><span id="Column2"></span><a class="ordercolumn" id="Order2" onclick="Order(this.id)" href="#" column="2">學期</a></th>
+                <th><span id="Column3"></span><a class="ordercolumn" id="Order3" onclick="Order(this.id)" href="#" column="3">評量類型</a></th>
+                <th><span id="Column4"></span><a class="ordercolumn" id="Order4" onclick="Order(this.id)" href="#" column="4">問卷標題</a></th>
+                <th><span id="Column5"></span><a class="ordercolumn" id="Order5" onclick="Order(this.id)" href="#" column="5">問卷開放時間</a></th>
+                <th><span id="Column6"></span><a class="ordercolumn" id="Order6" onclick="Order(this.id)" href="#" column="6">問卷結束時間</a></th>
+                <th><span id="Column7"></span><a class="ordercolumn" id="Order7" onclick="Order(this.id)" href="#" column="7">問卷建立時間</a></th>
+                <th><span id="Column8"></span><a class="ordercolumn" id="Order8" onclick="Order(this.id)" href="#" column="8">狀態</a></th>
+                <th class="tatitle">題目</th>
+                <th class="tatitle">瀏覽</th>
+                <th class="tatitle">編輯</th>
+                <th class="tatitle">匯出RAW檔</th>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_1" type="checkbox" value="d1031cf9-3d1a-430c-8d83-c161a3d5df97"></td>
+                <td>105</td>
+                <td>上學期</td>
+                <td>TA自評版</td>
+                <td>TA期末自我評量</td>
+                <td>2016-12-19 00:00:00</td>
+                <td>2017-01-08 23:59:00</td>
+                <td>2016-04-26 15:14:54</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_1" onclick="setQuestion(this.id); return false;" href="#" closestatus="0" guid="d1031cf9-3d1a-430c-8d83-c161a3d5df97"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_1" onclick="View('d1031cf9-3d1a-430c-8d83-c161a3d5df97'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_1" onclick="Edit(this.id); return false;" href="#" guid="d1031cf9-3d1a-430c-8d83-c161a3d5df97"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_1" onclick="GetRAW(this.id); return false;" href="#" guid="d1031cf9-3d1a-430c-8d83-c161a3d5df97"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_2" type="checkbox" value="4e6d57bc-472f-437d-97db-32e579badadb"></td>
+                <td>105</td>
+                <td>上學期</td>
+                <td>教師版</td>
+                <td>TA問卷教師版本</td>
+                <td>2016-12-19 00:00:00</td>
+                <td>2017-01-08 23:59:00</td>
+                <td>2016-04-27 19:33:49</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_2" onclick="setQuestion(this.id); return false;" href="#" closestatus="0" guid="4e6d57bc-472f-437d-97db-32e579badadb"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_2" onclick="View('4e6d57bc-472f-437d-97db-32e579badadb'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_2" onclick="Edit(this.id); return false;" href="#" guid="4e6d57bc-472f-437d-97db-32e579badadb"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_2" onclick="GetRAW(this.id); return false;" href="#" guid="4e6d57bc-472f-437d-97db-32e579badadb"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_3" type="checkbox" value="2954d829-456c-4662-88f0-1d08c3db724f"></td>
+                <td>105</td>
+                <td>上學期</td>
+                <td>學生版</td>
+                <td>TA問卷學生版本</td>
+                <td>2016-12-19 00:00:00</td>
+                <td>2017-01-08 23:59:00</td>
+                <td>2016-04-27 19:41:40</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_3" onclick="setQuestion(this.id); return false;" href="#" closestatus="0" guid="2954d829-456c-4662-88f0-1d08c3db724f"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_3" onclick="View('2954d829-456c-4662-88f0-1d08c3db724f'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_3" onclick="Edit(this.id); return false;" href="#" guid="2954d829-456c-4662-88f0-1d08c3db724f"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_3" onclick="GetRAW(this.id); return false;" href="#" guid="2954d829-456c-4662-88f0-1d08c3db724f"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_4" type="checkbox" value="5002226b-85c6-4fb9-8ad5-e95100e60587"></td>
+                <td>104</td>
+                <td>下學期</td>
+                <td>學生版</td>
+                <td>TA問卷學生版本</td>
+                <td>2016-05-27 00:00:00</td>
+                <td>2016-06-10 23:59:00</td>
+                <td>2016-05-16 09:05:40</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_4" onclick="setQuestion(this.id); return false;" href="#" closestatus="1" guid="5002226b-85c6-4fb9-8ad5-e95100e60587"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_4" onclick="View('5002226b-85c6-4fb9-8ad5-e95100e60587'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_4" onclick="Edit(this.id); return false;" href="#" guid="5002226b-85c6-4fb9-8ad5-e95100e60587"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_4" onclick="GetRAW(this.id); return false;" href="#" guid="5002226b-85c6-4fb9-8ad5-e95100e60587"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_5" type="checkbox" value="6fe31cca-29e5-42f6-a99e-ba6bb73ae307"></td>
+                <td>104</td>
+                <td>下學期</td>
+                <td>TA自評版</td>
+                <td>TA期末自我評量</td>
+                <td>2016-05-27 00:00:00</td>
+                <td>2016-06-10 23:59:00</td>
+                <td>2016-05-16 09:05:40</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_5" onclick="setQuestion(this.id); return false;" href="#" closestatus="1" guid="6fe31cca-29e5-42f6-a99e-ba6bb73ae307"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_5" onclick="View('6fe31cca-29e5-42f6-a99e-ba6bb73ae307'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_5" onclick="Edit(this.id); return false;" href="#" guid="6fe31cca-29e5-42f6-a99e-ba6bb73ae307"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_5" onclick="GetRAW(this.id); return false;" href="#" guid="6fe31cca-29e5-42f6-a99e-ba6bb73ae307"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+            <tr>
+                <td><input name="chkSelect" id="chkSelectItem_6" type="checkbox" value="59663197-6681-45e6-ae67-dd1e16297b2a"></td>
+                <td>104</td>
+                <td>下學期</td>
+                <td>教師版</td>
+                <td>TA問卷教師版本</td>
+                <td>2016-05-27 00:00:00</td>
+                <td>2016-06-10 23:59:00</td>
+                <td>2016-05-16 09:05:33</td>
+                <td><span class="label label-danger">停用</span></td>
+                <td align="center"><a class="ta_bn_set" id="EditQuestion_6" onclick="setQuestion(this.id); return false;" href="#" closestatus="1" guid="59663197-6681-45e6-ae67-dd1e16297b2a"><i class="icon-gear">設定</i></a></td>
+                <td><a class="ta_bn_view" id="ShowSurvey_6" onclick="View('59663197-6681-45e6-ae67-dd1e16297b2a'); return false;" href="#"><i class="icon-eye-open">瀏覽</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="EditSurvey_6" onclick="Edit(this.id); return false;" href="#" guid="59663197-6681-45e6-ae67-dd1e16297b2a"><i class="icon-edit">編輯</i></a></td>
+                <td align="center"><a class="ta_bn_edit" id="GetRAW_6" onclick="GetRAW(this.id); return false;" href="#" guid="59663197-6681-45e6-ae67-dd1e16297b2a"><i class="icon-download-alt">匯出RAW</i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--編輯視窗-->
+    <div id="dialog" title="info dialog" height="435px"  width="396px" >
+        <!--表格-->
+        <table id="dia_content" border="1">
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <p id="print_guid"></p>     <!--所有[匯出RAW檔]的guid輸出區塊-->
+
+    <p id="date"></p>    <!--所有[問卷結束時間]的輸出區塊-->
+
+</body>
+</html>
